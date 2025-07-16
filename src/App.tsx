@@ -432,7 +432,7 @@ function App() {
                 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Mail className={`w-5 h-5 ${accentColor}`} />
+                  <Mail className={`w-5 h-5 ${accentColor}`} />
                     <a href="mailto:jyothikakokkula3@gmail.com" className={`${accentColor} hover:underline font-mono`}>
                       jyothikakokkula3@gmail.com
               
@@ -455,58 +455,69 @@ function App() {
                 </div>
               </div>
             </div>
-
             <div className={`${cardClasses} border rounded-lg p-6`}>
-              <h3 className="font-mono text-lg font-semibold mb-4">send_message()</h3>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-mono mb-2">name:</label>
-                  <input 
-                    type="text" 
-                    className={`w-full px-4 py-2 border rounded-lg font-mono text-sm transition-colors ${
-                      isDarkMode 
-                        ? 'bg-gray-700 border-gray-600 focus:border-green-400' 
-                        : 'bg-white border-gray-300 focus:border-blue-600'
-                    } focus:outline-none focus:ring-1`}
-                    placeholder="your_name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-mono mb-2">email:</label>
-                  <input 
-                    type="email" 
-                    className={`w-full px-4 py-2 border rounded-lg font-mono text-sm transition-colors ${
-                      isDarkMode 
-                        ? 'bg-gray-700 border-gray-600 focus:border-green-400' 
-                        : 'bg-white border-gray-300 focus:border-blue-600'
-                    } focus:outline-none focus:ring-1`}
-                    placeholder="your@email.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-mono mb-2">message:</label>
-                  <textarea 
-                    rows={4}
-                    className={`w-full px-4 py-2 border rounded-lg font-mono text-sm transition-colors resize-none ${
-                      isDarkMode 
-                        ? 'bg-gray-700 border-gray-600 focus:border-green-400' 
-                        : 'bg-white border-gray-300 focus:border-blue-600'
-                    } focus:outline-none focus:ring-1`}
-                    placeholder="your_message_here..."
-                  ></textarea>
-                </div>
-                <button 
-                  type="submit"
-                  className={`w-full py-2 rounded-lg font-mono text-sm transition-colors ${
-                    isDarkMode 
-                      ? 'bg-green-400 text-gray-900 hover:bg-green-500' 
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
-                  }`}
-                >
-                  submit()
-                </button>
-              </form>
-            </div>
+  <h3 className="font-mono text-lg font-semibold mb-4">send_message()</h3>
+  <form 
+    action="https://formspree.io/f/xdkdoyne" 
+    method="POST" 
+    className="space-y-4"
+  >
+    <div>
+      <label className="block text-sm font-mono mb-2">name:</label>
+      <input 
+        type="text" 
+        name="name"
+        required
+        className={`w-full px-4 py-2 border rounded-lg font-mono text-sm transition-colors ${
+          isDarkMode 
+            ? 'bg-gray-700 border-gray-600 focus:border-green-400' 
+            : 'bg-white border-gray-300 focus:border-blue-600'
+        } focus:outline-none focus:ring-1`}
+        placeholder="your_name"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-mono mb-2">email:</label>
+      <input 
+        type="email" 
+        name="email"
+        required
+        className={`w-full px-4 py-2 border rounded-lg font-mono text-sm transition-colors ${
+          isDarkMode 
+            ? 'bg-gray-700 border-gray-600 focus:border-green-400' 
+            : 'bg-white border-gray-300 focus:border-blue-600'
+        } focus:outline-none focus:ring-1`}
+        placeholder="your@email.com"
+      />
+    </div>
+    <div>
+      <label className="block text-sm font-mono mb-2">message:</label>
+      <textarea 
+        name="message"
+        required
+        rows={4}
+        className={`w-full px-4 py-2 border rounded-lg font-mono text-sm transition-colors resize-none ${
+          isDarkMode 
+            ? 'bg-gray-700 border-gray-600 focus:border-green-400' 
+            : 'bg-white border-gray-300 focus:border-blue-600'
+        } focus:outline-none focus:ring-1`}
+        placeholder="your_message_here..."
+      ></textarea>
+    </div>
+    <button 
+      type="submit"
+      className={`w-full py-2 rounded-lg font-mono text-sm transition-colors ${
+        isDarkMode 
+          ? 'bg-green-400 text-gray-900 hover:bg-green-500' 
+          : 'bg-blue-600 text-white hover:bg-blue-700'
+      }`}
+    >
+      submit()
+    </button>
+  </form>
+</div>
+
+
           </div>
         </div>
       </section>
